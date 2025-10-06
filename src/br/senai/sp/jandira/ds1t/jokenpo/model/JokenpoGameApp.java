@@ -1,10 +1,12 @@
 package br.senai.sp.jandira.ds1t.jokenpo.model;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.random.RandomGenerator;
 
 public class JokenpoGameApp {
     String nomeDoAdiversario;
     int escolhaDoAdiversario;
+    int escolhaDoComputador;
 
     public void receberDadosDoOponente(){
     Scanner leitor = new Scanner(System.in);
@@ -22,5 +24,14 @@ public class JokenpoGameApp {
     System.out.println("-----------------------------------------------------------------");
     System.out.print("Qual desas opções você vai escolher "+ nomeDoAdiversario + "?");
     escolhaDoAdiversario = leitor.nextInt();
+
+    fazerRadom();
+    }
+
+    public void fazerRadom (){
+        Random random = new Random();
+
+        escolhaDoComputador = random.nextInt(3+1);
+
     }
 }
