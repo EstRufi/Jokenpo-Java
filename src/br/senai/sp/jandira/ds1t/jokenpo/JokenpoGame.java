@@ -10,6 +10,6 @@ public class JokenpoGame {
 
             JokenpoGameApp jogandoJokenpo = new JokenpoGameApp();
             jogandoJokenpo.receberDadosDoOponente();
-        }
+    }
 
 }

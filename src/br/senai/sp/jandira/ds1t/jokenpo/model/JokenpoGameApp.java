@@ -8,57 +8,63 @@ public class JokenpoGameApp {
     int escolhaDoComputador;
     String situasao;
 
-    public void receberDadosDoOponente(){
     Scanner leitor = new Scanner(System.in);
 
-    System.out.print("Meu caro oponente me diga seu nome por favor:");
-    nomeDoAdiversario = leitor.nextLine();
+    public void receberDadosDoOponente() {
 
-    System.out.println("-----------------------------------------------------------------");
-    System.out.println("Beleza " + nomeDoAdiversario + " vamos começar a jogar JOKENPÔ");
-    System.out.println("-----------------------------------------------------------------");
-    System.out.println("Das seguintes opções abaixo qual você vai escolher?");
-    System.out.println("(1) Pedra");
-    System.out.println("(2) Papel");
-    System.out.println("(3) Tesoura");
-    System.out.println("-----------------------------------------------------------------");
-    System.out.print("Qual desas opções você vai escolher "+ nomeDoAdiversario + "?");
-    escolhaDoAdiversario = leitor.nextInt();
+        System.out.print("Meu caro oponente me diga seu nome por favor:");
+        nomeDoAdiversario = leitor.nextLine();
 
-    fazerRadom();
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("Beleza " + nomeDoAdiversario + " vamos começar a jogar JOKENPÔ");
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("Das seguintes opções abaixo qual você vai escolher?");
+        System.out.println("(1) Pedra");
+        System.out.println("(2) Papel");
+        System.out.println("(3) Tesoura");
+        System.out.println("-----------------------------------------------------------------");
+        System.out.print("Qual desas opções você vai escolher " + nomeDoAdiversario + "?");
+        escolhaDoAdiversario = leitor.nextInt();
+
+        fazerRadom();
     }
 
-    public void fazerRadom (){
+    public void fazerRadom() {
         Random random = new Random();
 
-        escolhaDoComputador = random.nextInt(3+1);
+        escolhaDoComputador = random.nextInt(3 + 1);
 
         ganhadorDoJokenpo();
     }
 
-    public void ganhadorDoJokenpo(){
-    if (escolhaDoAdiversario == 1 && escolhaDoComputador == 2){
-        situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
-    }
-    else if (escolhaDoAdiversario == 2 && escolhaDoComputador == 3) {
-        situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
-    }
-    else if (escolhaDoAdiversario == 3 && escolhaDoComputador == 1){
-        situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
-    }
-    else if (escolhaDoAdiversario == 2 && escolhaDoComputador == 1) {
-        situasao = "NÃO ACREDITO COMO EU PERDI? VOCÊ GANHOU \uD83D\uDE21";
-    }
-    else if (escolhaDoAdiversario == 3 && escolhaDoComputador == 2){
+    public void ganhadorDoJokenpo() {
+        if (escolhaDoAdiversario == 1 && escolhaDoComputador == 2) {
+            situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
+        } else if (escolhaDoAdiversario == 2 && escolhaDoComputador == 3) {
+            situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
+        } else if (escolhaDoAdiversario == 3 && escolhaDoComputador == 1) {
+            situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
+        } else if (escolhaDoAdiversario == 2 && escolhaDoComputador == 1) {
             situasao = "NÃO ACREDITO COMO EU PERDI? VOCÊ GANHOU \uD83D\uDE21";
-    }
-    else {
-        situasao = "EITA DEU EMPATE";
-    }
-    mostrarResultados();
+        } else if (escolhaDoAdiversario == 3 && escolhaDoComputador == 2) {
+            situasao = "NÃO ACREDITO COMO EU PERDI? VOCÊ GANHOU \uD83D\uDE21";
+        } else {
+            situasao = "EITA DEU EMPATE";
+        }
+        mostrarResultados();
     }
 
-    public void mostrarResultados(){
+    public void mostrarResultados() {
+
+        System.out.println("------------------------------------------");
+        System.out.println("Vamos lá ver quem é o campeão de JOKENPO");
+        System.out.println("------------------------------------------");
+
+        System.out.println(nomeDoAdiversario + "você escolheu " + escolhaDoAdiversario);
+        System.out.println("Eu Escolhi " + escolhaDoComputador);
+        System.out.println(situasao);
+
+        System.out.print("gostaria de jogar novamente S/N?");
 
     }
 }
