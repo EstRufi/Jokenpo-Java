@@ -60,11 +60,12 @@ public class JokenpoGameApp {
         System.out.println("Vamos lá ver quem é o campeão de JOKENPO");
         System.out.println("------------------------------------------");
 
-        System.out.println(nomeDoAdiversario + "você escolheu " + escolhaDoAdiversario);
+        System.out.println(nomeDoAdiversario + " você escolheu " + escolhaDoAdiversario);
         System.out.println("Eu Escolhi " + escolhaDoComputador);
         System.out.println(situasao);
 
-        System.out.print("gostaria de jogar novamente S/N?");
+        System.out.println("------------------------------------------");
+        System.out.print("Gostaria de jogar novamente S/N?");
 
     }
 }
