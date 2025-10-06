@@ -1,12 +1,12 @@
 package br.senai.sp.jandira.ds1t.jokenpo.model;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.random.RandomGenerator;
 
 public class JokenpoGameApp {
     String nomeDoAdiversario;
     int escolhaDoAdiversario;
     int escolhaDoComputador;
+    String situasao;
 
     public void receberDadosDoOponente(){
     Scanner leitor = new Scanner(System.in);
@@ -32,6 +32,33 @@ public class JokenpoGameApp {
         Random random = new Random();
 
         escolhaDoComputador = random.nextInt(3+1);
+
+        ganhadorDoJokenpo();
+    }
+
+    public void ganhadorDoJokenpo(){
+    if (escolhaDoAdiversario == 1 && escolhaDoComputador == 2){
+        situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
+    }
+    else if (escolhaDoAdiversario == 2 && escolhaDoComputador == 3) {
+        situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
+    }
+    else if (escolhaDoAdiversario == 3 && escolhaDoComputador == 1){
+        situasao = "HAHA PERDEDOR, VOCÊ PERDEU OTARIO(A)";
+    }
+    else if (escolhaDoAdiversario == 2 && escolhaDoComputador == 1) {
+        situasao = "NÃO ACREDITO COMO EU PERDI? VOCÊ GANHOU \uD83D\uDE21";
+    }
+    else if (escolhaDoAdiversario == 3 && escolhaDoComputador == 2){
+            situasao = "NÃO ACREDITO COMO EU PERDI? VOCÊ GANHOU \uD83D\uDE21";
+    }
+    else {
+        situasao = "EITA DEU EMPATE";
+    }
+    mostrarResultados();
+    }
+
+    public void mostrarResultados(){
 
     }
 }
